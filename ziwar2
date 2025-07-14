@@ -1,0 +1,89 @@
+@@ -0,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>موقعي البسيط</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 32px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 18px;
+      color: #3a8e3a;
+    }
+    input[type="text"] {
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 70%;
+      margin-bottom: 10px;
+      text-align: center;
+      direction: ltr;
+    }
+    button {
+      padding: 8px 18px;
+      font-size: 1rem;
+      background: #3a8e3a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #317031;
+    }
+    #result {
+      margin-top: 14px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>مرحبًا بك في موقعي</h1>
+    <p>أدخل الكود:</p>
+    <input type="text" id="myCode" placeholder="أدخل الكود هنا..." />
+    <br />
+    <button onclick="checkCode()">تحقق</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkCode() {
+      var code = document.getElementById("myCode").value.trim();
+      var result = document.getElementById("result");
+      if (code === "CODE123") {
+        result.innerText = "✅ الكود صحيح";
+        result.style.color = "#3a8e3a";
+      } else if(code === "") {
+        result.innerText = "⚠️ الرجاء إدخال كود";
+        result.style.color = "#e57300";
+      } else {
+        result.innerText = "❌ الكود غير صحيح";
+        result.style.color = "#c9302c";
+      }
+    }
+  </script>
+</body>
+</html>
